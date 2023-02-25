@@ -1,0 +1,26 @@
+﻿@model MoviesDBManager.Models.Actor
+
+@{
+    ViewBag.Title = "Details " + Model.Name;
+}
+<div class="prevent-select">
+    <h2 style="display:flex; column-gap:8px; align-items:center">
+        @Model.Name
+        <span>&nbsp;</span>
+        @Helper.IconCmd("Actors", "Edit/" + Model.Id, "fa-edit", "Modifier...")
+        @Helper.IconConfirmCmd("Actors", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer...")
+    </h2>
+    <hr />
+    <div style="display: flex; column-gap: 15px; align-items: start ">
+        @Helper.Image(Model.GetAvatarURL(false), "largeAvatar")
+        <div style="flex:3">
+            <div style="font-size:1.5em; border-bottom:1px solid #ccc"; margin-bottom:8px;>Filmographie</div>
+            <div class="MoviesContainer">
+                @{ Html.RenderPartial("~/Views/Movies/Movies.cshtml", Model.Movies); }
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("retour", "Index")
+    </p>
+</div>

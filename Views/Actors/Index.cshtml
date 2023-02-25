@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MoviesDBManager.Models.Actor>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="prevent-select">
+    <h2>Acteurs @Helper.IconCmd("Actors", "Create", "fa-plus-square", "Ajouter...")</h2>
+
+    <hr />
+    <div id="ActorsContainer"> <!-- Refreshed periodically --> </div>
+</div>
+@section Scripts {
+    <script defer>
+        PartialRefresh.setTimeOutPage("@Url.Action("End","Session")");
+        let actors = new PartialRefresh("@Url.Action("Actors", "Actors")", "ActorsContainer", 15, () => {
+            $(".ActorContainer").on("click", (event) => {
+                let id = event.currentTarget.getAttribute('actor_id');
+                window.location = "@Url.Action("Details", "Actors")" + "/" + id;
+            })
+        });
+    </script>
+}

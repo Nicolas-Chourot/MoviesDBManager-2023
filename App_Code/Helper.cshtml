@@ -1,0 +1,92 @@
+﻿@helper IconCmd(string controller, string action, string icon_class, string TooltipMessage, string ToolTipPlacement = "bottom")
+{
+    var Url = new System.Web.Mvc.UrlHelper(HttpContext.Current.Request.RequestContext);
+    <a href="@Url.Action(action,controller)" style="text-decoration:none">
+        <span class="icon fa @icon_class"
+              title="@TooltipMessage"
+              data-placement="@ToolTipPlacement">
+        </span>
+    </a>
+}
+@helper IconConfirmCmd(string controller, string Action, string icon_class, string TooltipMessage, string ToolTipPlacement = "bottom")
+{
+    //// http://bootboxjs.com/documentation.html#bb-confirm
+    var Url = new System.Web.Mvc.UrlHelper(HttpContext.Current.Request.RequestContext);
+    <div onclick='bootbox.confirm("@TooltipMessage", function(result){ if (result) window.location = "@Url.Action(Action,controller)"; })'>
+        <span class="icon fa @icon_class"
+              title="@TooltipMessage"
+              data-placement="@ToolTipPlacement">
+        </span>
+    </div>
+}
+@helper IconConfirmCmdWithParam(string controller, string Action, string extraparam, string icon_class, string TooltipMessage, string ToolTipPlacement = "bottom")
+{
+    //// http://bootboxjs.com/documentation.html#bb-confirm
+    var Url = new System.Web.Mvc.UrlHelper(HttpContext.Current.Request.RequestContext);
+    <div onclick='bootbox.confirm("@TooltipMessage", function(result){ if (result) window.location = "@(Url.Action(Action, controller) + extraparam)"; })'>
+        <span class="icon fa @icon_class"
+              title="@TooltipMessage"
+              data-placement="@ToolTipPlacement">
+        </span>
+    </div>
+}
+@helper SelectionLists(System.Web.Mvc.SelectList selectedItems, System.Web.Mvc.SelectList items)
+{
+    <div class="selectionsGrid">
+        <select id='SelectedItems' name='SelectedItems' size='12' multiple class='form-control'>
+            @if (selectedItems != null)
+            {
+                foreach (var si in selectedItems)
+                {
+                    <option value='@si.Value'>@si.Text</option>
+                }
+            }
+        </select>
+        <div class="selectionsIcons">
+            <div id="MoveLeft" class="icon fa fa-toggle-left" data-toggle="tooltip" data-placement="top" title="Ajouter"></div>
+            <div id="MoveRight" class="icon fa fa-toggle-right" data-toggle="tooltip" data-placement="bottom" title="Retirer"></div>
+        </div>
+        <select id='UnselectedItems' size='12' multiple class='form-control'>
+            @foreach (var ui in items)
+            {
+                bool found = false;
+                if (selectedItems != null)
+                {
+                    foreach (var si in selectedItems)
+                    {
+                        if (si.Value == ui.Value)
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (!found)
+                {
+                    <option value='@ui.Value'>@ui.Text</option>
+                }
+            }
+        </select>
+    </div>
+}
+@helper ImageUploader(int modelId, string targetControlId, string imageUrl, string waitingImage = "", string TooltipMessage = "", string ToolTipPlacement = "bottom")
+{
+    var Url = new System.Web.Mvc.UrlHelper(HttpContext.Current.Request.RequestContext);
+    imageUrl = Url.Content(imageUrl);
+    waitingImage = Url.Content(waitingImage);
+    <div class='imageUploader'
+         id='@modelId'
+         controlId='@targetControlId'
+         imageSrc='@imageUrl'
+         waitingImage='@waitingImage'
+         data-toggle="tooltip"
+         data-placement="@ToolTipPlacement"
+         title="@TooltipMessage">
+    </div>
+}
+@helper Image(string url, string cssClass)
+{
+    var Url = new System.Web.Mvc.UrlHelper(HttpContext.Current.Request.RequestContext);
+    url = Url.Content(url);
+    <div class="@cssClass" style="background:url(@url);"></div>
+}

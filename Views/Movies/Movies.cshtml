@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MoviesDBManager.Models.Movie>
+
+@foreach (var item in Model)
+{
+    <div class="MovieContainer" movie_id="@item.Id">
+        @Helper.Image(item.GetPosterURL(false), "smallPoster")
+        <div class="ellipsis"> @item.Name</div>
+        @Helper.IconCmd("Movies", "Details/" + item.Id, "fa-info-circle", "Détails...")
+        @Helper.IconCmd("Movies", "Edit/" + item.Id, "fa-edit", "Modifier...")
+        @Helper.IconConfirmCmd("Movies", "Delete/" + item.Id, "fa-times-rectangle-o", "Effacer...")
+    </div>
+}
+

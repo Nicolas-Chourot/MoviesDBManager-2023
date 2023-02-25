@@ -1,0 +1,185 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+
+textarea {
+    display: block;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 280px;
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hideOverflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.icon {
+    font-size: 25px !important;
+    cursor: pointer;
+    -webkit-text-stroke-width: 0.75px;
+    -webkit-text-stroke-color: #337ab7;
+    -webkit-text-fill-color: #337ab7;
+}
+
+    .icon:hover {
+        -webkit-text-stroke-color: #6dbafc;
+        -webkit-text-fill-color: #6dbafc;
+    }
+
+
+    .icon:active {
+        -webkit-text-stroke-color: #e0f1ff;
+        -webkit-text-fill-color: #e0f1ff;
+    }
+
+.selectionsGrid {
+    display: flex;
+}
+
+    .selectionsGrid select {
+        min-width: 120px;
+    }
+
+.selectionsIcons {
+    display: flex;
+    flex-direction:column;
+    min-width: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageUploader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 280px;
+    border: 1px solid lightgray;
+}
+
+.UploadedImage {
+    width: 278px;
+}
+
+
+.ActorContainer {
+    display: grid;
+    grid-template-columns: 60px auto 35px 35px 35px;
+    font-size: 16px;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    padding: 3px;
+}
+
+    .ActorContainer .icon {
+        display: none;
+    }
+
+    .ActorContainer:hover {
+        background-color: aliceblue;
+    }
+
+        .ActorContainer:hover .icon {
+            display: block;
+        }
+
+.MovieContainer {
+    display: grid;
+    grid-template-columns: 60px auto 35px 35px 35px;
+    font-size: 16px;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    padding: 3px;
+}
+
+    .MovieContainer .icon {
+        display: none;
+    }
+
+    .MovieContainer:hover {
+        background-color: aliceblue;
+    }
+
+        .MovieContainer:hover .icon {
+            display: block;
+        }
+
+.largeAvatar {
+    width: 200px;
+    height: 250px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.smallAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius:50px;
+    background-size: cover !important;
+    background-position:top !important;
+    background-repeat: no-repeat !important;
+}
+
+.largePoster {
+    width: 200px;
+    height: 300px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.smallPoster {
+    width: 50px;
+    height: 55px;
+    background-size: cover !important;
+    background-position: top !important;
+    background-repeat: no-repeat !important;
+}
+
+div2 {
+    border:1px solid red;
+}
