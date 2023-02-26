@@ -8,14 +8,14 @@
         @Model.Name
         <span>&nbsp;</span>
         @Helper.IconCmd("Actors", "Edit/" + Model.Id, "fa-edit", "Modifier...")
-        @Helper.IconConfirmCmd("Actors", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer...")
+        @Helper.IconConfirmCmd("Actors", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer " + Model.Name + "?")
     </h2>
     <hr />
     <div style="display: flex; column-gap: 15px; align-items: start ">
         @Helper.Image(Model.GetAvatarURL(false), "largeAvatar")
         <div style="flex:3">
-            <div style="font-size:1.5em; border-bottom:1px solid #ccc"; margin-bottom:8px;>Filmographie</div>
-            <div class="MoviesContainer">
+            <div style="font-size:1.5em; border-bottom:1px solid #ccc">Filmographie</div>
+            <div class="MoviesContainer" style="margin-top:10px">
                 @{ Html.RenderPartial("~/Views/Movies/Movies.cshtml", Model.Movies); }
             </div>
         </div>

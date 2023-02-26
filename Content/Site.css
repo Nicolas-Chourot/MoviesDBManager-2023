@@ -84,7 +84,7 @@ textarea {
 
 .selectionsIcons {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     min-width: 40px;
     align-items: center;
     justify-content: center;
@@ -93,6 +93,7 @@ textarea {
 .imageUploader {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     width: 280px;
     border: 1px solid lightgray;
@@ -102,37 +103,48 @@ textarea {
     width: 278px;
 }
 
+.ActorsContainer {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fill, 100px);
+}
 
 .ActorContainer {
-    display: grid;
-    grid-template-columns: 60px auto 35px 35px 35px;
-    font-size: 16px;
+    text-decoration:none;
+    width: 100px;
+    height:100px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px !important;
     align-items: center;
-    height: 60px;
-    background-color: white;
     padding: 3px;
+    cursor: pointer;
 }
 
     .ActorContainer .icon {
         display: none;
     }
 
-    .ActorContainer:hover {
-        background-color: aliceblue;
+    .ActorContainer:hover .icon {
+        display: block;
     }
 
-        .ActorContainer:hover .icon {
-            display: block;
-        }
+.MoviesContainer {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fill, 100px);
+}
 
 .MovieContainer {
-    display: grid;
-    grid-template-columns: 60px auto 35px 35px 35px;
-    font-size: 16px;
+    text-decoration: none;
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px !important;
     align-items: center;
-    height: 60px;
-    background-color: white;
     padding: 3px;
+    cursor: pointer;
 }
 
     .MovieContainer .icon {
@@ -153,15 +165,17 @@ textarea {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    border: 1px solid #ccc;
 }
 
 .smallAvatar {
-    width: 50px;
-    height: 50px;
-    border-radius:50px;
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
     background-size: cover !important;
-    background-position:top !important;
+    background-position: top !important;
     background-repeat: no-repeat !important;
+    border: 1px solid #ccc;
 }
 
 .largePoster {
@@ -170,16 +184,18 @@ textarea {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    border: 1px solid #ccc;
 }
 
 .smallPoster {
-    width: 50px;
-    height: 55px;
+    width: 70px;
+    height: 90px;
     background-size: cover !important;
     background-position: top !important;
     background-repeat: no-repeat !important;
+    border: 1px solid #ccc;
 }
 
-div2 {
-    border:1px solid red;
+img2 {
+    border: 1px solid red;
 }

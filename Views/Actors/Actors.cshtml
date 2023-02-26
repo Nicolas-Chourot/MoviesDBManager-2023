@@ -2,12 +2,11 @@
 
 @foreach (var item in Model)
 {
-    <div class="ActorContainer" actor_id="@item.Id">
-        @Helper.Image(item.GetAvatarURL(false), "smallAvatar")
-        @item.Name
-        @Helper.IconCmd("Actors", "Details/" + item.Id, "fa-info-circle", "Détails...")
-        @Helper.IconCmd("Actors", "Edit/" + item.Id, "fa-edit", "Modifier...")
-        @Helper.IconConfirmCmd("Actors", "Delete/" + item.Id, "fa-times-rectangle-o", "Effacer...")
-    </div>
+    <a href="@Url.Action("Details","Actors", new {id=item.Id})">
+        <div class="ActorContainer">
+            @Helper.Image(item.GetAvatarURL(false), "smallAvatar")
+            <div class="ellipsis" style="text-align:center; width:inherit">@item.Name</div>
+        </div>
+    </a>
 }
 

@@ -4,20 +4,14 @@
 }
 <div class="prevent-select">
     <h2>Films @Helper.IconCmd("Movies","Create", "fa-plus-square", "Ajouter...")</h2>
-
     <hr />
-    <div id="MoviesContainer" > <!-- Refreshed periodically --> </div>
+    <div id="MoviesContainer" class="MoviesContainer"> <!-- Refreshed periodically --> </div>
 </div>
 
 @section Scripts {
 
     <script defer>
         PartialRefresh.setTimeOutPage("@Url.Action("End","Session")");
-        let movies = new PartialRefresh("@Url.Action("Movies")", "MoviesContainer", 15, () => {
-            $(".MovieContainer").on("click", (event) => {
-                let id = event.currentTarget.getAttribute('movie_id');
-                window.location = "@Url.Action("Details", "Movies")" + "/" + id;
-            })
-        });
+        let movies = new PartialRefresh("@Url.Action("Movies")", "MoviesContainer", 15);
     </script>
 }

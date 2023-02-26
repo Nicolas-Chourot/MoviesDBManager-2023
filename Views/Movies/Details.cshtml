@@ -7,14 +7,14 @@
     <h2 style="display:flex; column-gap:8px;">
         @Model.Name
         <span>&nbsp;</span>
-        @Helper.IconCmd("Movies", "Edit/" + Model.Id, "fa-edit", "Modifier...")
-        @Helper.IconConfirmCmd("Movies", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer...")
+        @Helper.IconCmd("Movies", "Edit/" + Model.Id, "fa-edit", "Modifier..." )
+        @Helper.IconConfirmCmd("Movies", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer " + Model.Name + "?")
     </h2>
     <div style="display: flex; column-gap: 15px; align-items: start ">
         @Helper.Image(Model.GetPosterURL(false), "largePoster")
         <div style="flex:3">
-            <div style="font-size:1.5em; border-bottom:1px solid #ccc" ; margin-bottom:8px;>Acteurs</div>
-            <div class="ActorsContainer">
+            <div style="font-size:1.5em; border-bottom:1px solid #ccc">Acteurs</div>
+            <div class="ActorsContainer" style="margin-top:10px">
                 @{ Html.RenderPartial("~/Views/Actors/Actors.cshtml", Model.Actors); }
             </div>
             <hr />
