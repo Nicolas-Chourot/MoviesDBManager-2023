@@ -11,7 +11,6 @@
 @section Scripts {
 
     <script defer>
-        PartialRefresh.setTimeOutPage("@Url.Action("End","Session")");
         let movies = new PartialRefresh("@Url.Action("Movies")", "MoviesContainer", 15);
     </script>
 }

@@ -10,7 +10,6 @@ namespace MoviesDBManager.Models
 {
     public class Actor
     {
-        
         public int Id { get; set; }
         [Required]
         [Display(Name = "Nom")]

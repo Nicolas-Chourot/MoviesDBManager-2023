@@ -130,7 +130,6 @@ namespace MoviesDBManager.Models
                 throw e;
             }
         }
-
         public bool HasChanged
         {
             get

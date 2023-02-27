@@ -1,10 +1,10 @@
 ﻿let timeOutPage = "";
 
 class PartialRefresh {
-    constructor(serviceURL, container, refreshRate, callback = null) {
+    constructor(serviceURL, container, refreshRate, postRefreshCallback = null) {
         this.serviceURL = serviceURL;
         this.container = container;
-        this.callback = callback;
+        this.postRefreshCallback = postRefreshCallback;
         this.refreshRate = refreshRate * 1000;
         this.paused = false;
         this.refresh(true);
@@ -20,7 +20,7 @@ class PartialRefresh {
     replaceContent(htmlContent) {
         if (htmlContent !== "") {
             $("#" + this.container).html(htmlContent);
-            if (this.callback != null) this.callback();
+            if (this.postRefreshCallback != null) this.postRefreshCallback();
         }
     }
 

@@ -4,7 +4,7 @@
     ViewBag.Title = "Details " + Model.Name;
 }
 <div class="prevent-select" style="padding-top:10px;">
-    <div style="display:grid; grid-template-columns:auto 35px 35px; align-items:top;">
+    <div style="display:grid; grid-template-columns:auto 35px 35px; align-items:baseline;">
         <div class="MovieDetailsTitle"> @Model.Name</div>
         @Helper.IconCmd("Movies", "Edit/" + Model.Id, "fa-edit", "Modifier..." )
         @Helper.IconConfirmCmd("Movies", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer " + Model.Name + "?")
