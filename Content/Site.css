@@ -199,3 +199,66 @@ textarea {
 img2 {
     border: 1px solid red;
 }
+
+.MovieDetails {
+    display: flex;
+    column-gap: 15px;
+    align-items: start;
+}
+
+.MovieDetailsTitle {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.MovieDetailsActors {
+    flex: 3;
+}
+
+@media screen and (max-width: 480px) {
+    .MovieDetails {
+        display: flex;
+        flex-direction:column;
+    }
+    .MovieDetailsTitle {
+        font-size: 1.4em;
+        font-weight:bold;
+    }
+    .MovieDetailsActors {
+        margin-top:15px;
+        display:block;
+        width:100%;
+    }
+}
+
+.ActorDetails {
+    display: flex;
+    column-gap: 15px;
+    align-items: start;
+}
+
+.ActorDetailsName {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.ActorDetailsMovies {
+    flex: 3;
+}
+
+@media screen and (max-width: 480px) {
+    .ActorDetails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ActorDetailsName {
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+
+    .ActorDetailsMovies {
+        margin-top: 15px;
+        display: block;
+        width: 100%;
+    }
+}

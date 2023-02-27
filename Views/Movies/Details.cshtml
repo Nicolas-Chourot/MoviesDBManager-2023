@@ -3,16 +3,15 @@
 @{
     ViewBag.Title = "Details " + Model.Name;
 }
-<div class="prevent-select">
-    <h2 style="display:flex; column-gap:8px;">
-        @Model.Name
-        <span>&nbsp;</span>
+<div class="prevent-select" style="padding-top:10px;">
+    <div style="display:grid; grid-template-columns:auto 35px 35px; align-items:top;">
+        <div class="MovieDetailsTitle"> @Model.Name</div>
         @Helper.IconCmd("Movies", "Edit/" + Model.Id, "fa-edit", "Modifier..." )
         @Helper.IconConfirmCmd("Movies", "Delete/" + Model.Id, "fa-times-rectangle-o", "Effacer " + Model.Name + "?")
-    </h2>
-    <div style="display: flex; column-gap: 15px; align-items: start ">
+    </div>
+    <div class="MovieDetails">
         @Helper.Image(Model.GetPosterURL(false), "largePoster")
-        <div style="flex:3">
+        <div class="MovieDetailsActors">
             <div style="font-size:1.5em; border-bottom:1px solid #ccc">Acteurs</div>
             <div class="ActorsContainer" style="margin-top:10px">
                 @{ Html.RenderPartial("~/Views/Actors/Actors.cshtml", Model.Actors); }
