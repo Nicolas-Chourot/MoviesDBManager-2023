@@ -24,7 +24,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.AvatarImageData, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Helper.ImageUploader(Model.Id, "AvatarImageData", Model.GetAvatarURL(), "~/ImageFiles/Loading_icon.gif", "Cliquez pour choisir une image")
+            @Helper.ImageUploader(Model.Id, "AvatarImageData", Model.GetAvatarURL(), "~/Images_Data/Loading_icon.gif", "Cliquez pour choisir une image")
             @Html.ValidationMessageFor(model => model.AvatarImageData, "", new { @class = "text-danger" })
         </div>
     </div>

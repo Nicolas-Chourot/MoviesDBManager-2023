@@ -8,8 +8,6 @@ namespace MoviesDBManager.Models
 {
     public class ActorsRepository : Repository<Actor>
     {
-       
- 
         public int Add(Actor actor, List<int> moviesId)
         {
             BeginTransaction();

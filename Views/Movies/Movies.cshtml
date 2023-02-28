@@ -4,7 +4,7 @@
 {
     <a href="@Url.Action("Details","Movies", new {id=item.Id})">
         <div class="ActorContainer">
-            @Helper.Image(item.GetPosterURL(false), "smallPoster")
+            @Helper.Image(item.GetPosterURL(true), "smallPoster")
             <div class="ellipsis" style="text-align:center; width:inherit">@item.Name</div>
         </div>
     </a>
